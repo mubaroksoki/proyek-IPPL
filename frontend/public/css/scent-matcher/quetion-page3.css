@@ -1,0 +1,103 @@
+
+ .container {
+   max-width: 800px;
+   margin: 0 auto;
+   width: 100%;
+ }
+
+ .header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 30px;
+ }
+
+ .question {
+   font-size: 28px;
+   color: #000;
+   max-width: 300px;
+ }
+
+ .strength-options {
+   background-color: #c4818c;
+   border-radius: 15px;
+   padding: 20px;
+   display: flex;
+   justify-content: space-between;
+   gap: 15px;
+ }
+
+ .option {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+ }
+
+ .option-box {
+   width: 120px;
+   height: 150px;
+   border-radius: 15px 15px 0 0;
+   margin-bottom: 10px;
+ }
+
+ .subtle {
+   background-color: #fff5f5;
+ }
+
+ .balanced {
+   background-color: #ffc2c2;
+ }
+
+ .strong {
+   background-color: #c73648;
+ }
+
+ .option-label {
+   color: white;
+   font-size: 22px;
+ }
+
+ .style-options {
+   display: flex;
+   flex-direction: column;
+   margin-top: 20px;
+   width: 50%;
+ }
+
+ .style-option {
+   color: white;
+   font-size: 24px;
+   padding: 50px 20px;
+   text-align: center;
+ }
+
+ .fresh {
+   background-color: #c4818c;
+ }
+
+ .seductive {
+   background-color: #5c2429;
+ }
+
+ .button-container {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 40px;
+ }
+
+ .button {
+   background-color: #c4818c;
+   color: white;
+   border: none;
+   border-radius: 30px;
+   padding: 15px 40px;
+   font-size: 22px;
+   cursor: pointer;
+   text-align: center;
+   text-decoration: none;
+ }
+
+ .button:hover {
+   background-color: #a86d76;
+ }

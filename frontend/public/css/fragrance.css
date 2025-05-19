@@ -1,0 +1,139 @@
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Helvetica Neue', Arial, sans-serif;
+ }
+
+ body {
+   background-color: #faf4f1;
+   color: #87635c;
+   line-height: 1.6;
+ }
+
+ /* Header Styles */
+ header {
+   padding: 1rem 5%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1px solid #e6d9d3;
+ }
+
+ .logo {
+   font-size: 1.8rem;
+   font-weight: 500;
+   color: #ba7d76;
+ }
+
+ nav ul {
+   display: flex;
+   list-style: none;
+ }
+
+ nav ul li {
+   margin-left: 2rem;
+ }
+
+ nav ul li a {
+   color: #87635c;
+   text-decoration: none;
+   font-size: 0.9rem;
+   transition: color 0.3s;
+ }
+
+ nav ul li a:hover {
+   color: #c96e59;
+ }
+
+ /* Main Content Styles */
+ main {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 2rem 5%;
+ }
+
+ h1 {
+   text-align: center;
+   color: #ba7d76;
+   margin: 3rem 0;
+   font-weight: 400;
+   font-size: 2.5rem;
+ }
+
+ .fragrance-section {
+   margin-bottom: 5rem;
+ }
+
+ .fragrance-category {
+   display: flex;
+   align-items: center;
+   margin-bottom: 5rem;
+ }
+
+ .fragrance-category:nth-child(even) {
+   flex-direction: row-reverse;
+ }
+
+ .fragrance-info {
+   flex: 1;
+   padding: 0 2rem;
+ }
+
+ .fragrance-image {
+   flex: 1;
+   overflow: hidden;
+   border-radius: 8px;
+ }
+
+ .fragrance-image img {
+   width: 100%;
+   height: auto;
+   display: block;
+   border-radius: 8px;
+ }
+
+ h2 {
+   color: #ba7d76;
+   margin-bottom: 1.5rem;
+   font-weight: 400;
+   font-size: 1.8rem;
+ }
+
+ p {
+   font-size: 1rem;
+   line-height: 1.8;
+   color: #a58681;
+ }
+
+ /* Responsive Styles */
+ @media screen and (max-width: 768px) {
+   .fragrance-category,
+   .fragrance-category:nth-child(even) {
+     flex-direction: column;
+     margin-bottom: 3rem;
+   }
+
+   .fragrance-info {
+     order: 2;
+     padding: 1.5rem 0;
+   }
+
+   .fragrance-image {
+     order: 1;
+     margin-bottom: 1rem;
+   }
+
+   nav ul li {
+     margin-left: 1rem;
+   }
+
+   h1 {
+     margin: 2rem 0;
+     font-size: 2rem;
+   }
+
+   h2 {
+     font-size: 1.5rem;
+   }
+ }

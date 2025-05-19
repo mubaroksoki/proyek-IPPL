@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/fragrance.css">
+    <title><%- title %></title>
+</head>
+<body>
+    <main>
+        <%- include('partials/header.ejs') %>
+        
+        <h1>Our Fragrance Guide</h1>
+        
+        <!-- Fragrances Section -->
+        <section class="fragrance-section">
+            <% fragrances.forEach((fragrance, index) => { %>
+            <div class="fragrance-category">
+                <% if(index % 2 === 0) { %>
+                <div class="fragrance-image">
+                    <img src="<%= fragrance.image %>" alt="<%= fragrance.alt %>">
+                </div>
+                <div class="fragrance-info">
+                    <h2><%= fragrance.name %></h2>
+                    <p><%= fragrance.desc %></p>
+                </div>
+                <% } else { %>
+                <div class="fragrance-info">
+                    <h2><%= fragrance.name %></h2>
+                    <p><%= fragrance.desc %></p>
+                </div>
+                <div class="fragrance-image">
+                    <img src="<%= fragrance.image %>" alt="<%= fragrance.alt %>">
+                </div>
+                <% } %>
+            </div>
+            <% }) %>
+        </section>
+    </main>
+</body>
+</html>

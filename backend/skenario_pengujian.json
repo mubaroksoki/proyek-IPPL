@@ -1,0 +1,390 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890",
+    "name": "Parfum Recommendation API - Full Test Scenario",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "0. Setup",
+      "item": [
+        {
+          "name": "Initialize Environment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.environment.set('base_url', 'http://localhost:3000');",
+                  "pm.environment.set('admin_email', 'admin@example.com');",
+                  "pm.environment.set('admin_password', 'password123');",
+                  "pm.environment.set('test_email', 'testuser_' + Math.floor(Math.random() * 10000) + '@example.com');"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/",
+              "host": ["{{base_url}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "1. Authentication",
+      "item": [
+        {
+          "name": "Register New User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Test User\",\n    \"email\": \"{{test_email}}\",\n    \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/register",
+              "host": ["{{base_url}}"],
+              "path": ["register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "const jsonData = pm.response.json();",
+                  "pm.expect(jsonData.data.token).to.exist;",
+                  "pm.environment.set('auth_token', jsonData.data.token);",
+                  "pm.environment.set('user_id', jsonData.data.user.user_id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"{{test_email}}\",\n    \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/login",
+              "host": ["{{base_url}}"],
+              "path": ["login"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "2. Katalog Operations",
+      "item": [
+        {
+          "name": "Get All Parfums",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/katalog",
+              "host": ["{{base_url}}"],
+              "path": ["katalog"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Parfums (Dior)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/katalog/search?keyword=dior",
+              "host": ["{{base_url}}"],
+              "path": ["katalog", "search"],
+              "query": [
+                {
+                  "key": "keyword",
+                  "value": "dior"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "View Parfum Detail (ID 1)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.environment.set('first_parfum_id', pm.response.json().data.parfum.parfum_id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/katalog/1",
+              "host": ["{{base_url}}"],
+              "path": ["katalog", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "3. Wishlist Operations",
+      "item": [
+        {
+          "name": "Add to Wishlist",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wishlist/{{first_parfum_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["wishlist", "{{first_parfum_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Wishlist",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wishlist",
+              "host": ["{{base_url}}"],
+              "path": ["wishlist"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove from Wishlist",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wishlist/{{first_parfum_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["wishlist", "{{first_parfum_id}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "4. Recommendation System",
+      "item": [
+        {
+          "name": "Get Manual Recommendations",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"notes\": \"floral,vanilla\",\n    \"price_range\": \"medium\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/rekomendasi",
+              "host": ["{{base_url}}"],
+              "path": ["rekomendasi"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Auto Recommendations",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Auto recommendations should return detected preferences\", function() {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.data.detected_preferences).to.exist;",
+                  "    pm.expect(jsonData.data.recommendations).to.be.an('array');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/rekomendasi/auto",
+              "host": ["{{base_url}}"],
+              "path": ["rekomendasi", "auto"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Trending Parfums",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/rekomendasi/trending",
+              "host": ["{{base_url}}"],
+              "path": ["rekomendasi", "trending"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "5. Advanced Test Flow",
+      "item": [
+        {
+          "name": "Complete User Journey",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// This is a test script that would be executed after the complete flow",
+                  "pm.test(\"Complete journey test\", function() {",
+                  "    pm.expect(pm.environment.get('auth_token')).to.exist;",
+                  "    pm.expect(pm.environment.get('first_parfum_id')).to.exist;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/me",
+              "host": ["{{base_url}}"],
+              "path": ["me"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "console.log('Running pre-request script');"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "auth_token",
+      "value": ""
+    },
+    {
+      "key": "user_id",
+      "value": ""
+    },
+    {
+      "key": "first_parfum_id",
+      "value": ""
+    }
+  ]
+}

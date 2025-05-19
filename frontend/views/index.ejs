@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <title><%- title %></title>
+</head>
+
+<body>
+  <%- include('partials/header.ejs') %>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Elevate <em>everyday</em> moments to <em>extraordinary.</em></h1>
+      <a href="/sign-up" class="btn">Sign Up!</a>
+    </div>
+    <div class="hero-image">
+      <img src="img/index/parfume-pink-1223.png" alt="Pink perfume bottle with white flower">
+    </div>
+  </section>
+  <section class="welcome">
+    <div class="tulisan-getnow">
+      <div class="circle-container">
+        <img src="img/index/circle3-6545.png" alt="Decorative circles" class="circle-bg">
+        <h1 class="gettoknowscentara">GET TO KNOW SCENTARA!</h1>
+      </div>
+    </div>
+    <div class="welcome-content">
+      <h2>Welcome To Scentara</h2>
+      <p>
+        Indonesia's Local Perfume Directory. Discover the best selection of local perfume brands on the Indonesian market. We bring you a curated collection of local perfumes crafted by passionate perfumers, highlighting the amazing wonders of exotic scents.
+      </p>
+      <p>
+        Take a journey through the beauty and elegance of Indonesian-made perfumes. Explore, connect and find the perfect fragrance for you. From the cities to fragrances from the archipelago, for the world. Fragrances that tell a story.
+      </p>
+    </div>
+  </section>
+  <!-- Search Perfume-->
+
+  <section class="find-perfume">
+    <div class="find-perfume-image">
+      <img src="img/index/flower-yellow-pink-7455.png" alt="Perfume bottles with flowers">
+    </div>
+    <div class="find-perfume-content">
+      <h2>Find a perfume that you like</h2>
+      <p>Choose a fragrance that not only suits your taste but also expresses your unique personality and style.</p>
+      <div class="container">
+        <div class="search-container">
+          <div class="search-bar">
+            <div class="search-input">
+              <div class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A0A0A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </div>
+              <input type="text" placeholder="Search perfume by">
+            </div>
+            <div class="dropdown-button" id="dropdownButton">
+              <span class="selected-option">Everything</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-icon">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <div class="dropdown-item selected" data-value="Everything">Everything</div>
+            <div class="dropdown-item" data-value="Spesific parfume">Spesific parfume</div>
+            <div class="dropdown-item" data-value="Notes">Notes</div>
+            <div class="dropdown-item" data-value="category">category</div>
+          </div>
+        </div>
+      </div>
+
+      <script src="js/index.js"></script>
+
+    </div>
+
+
+  </section>
+  <section class="brands">
+    <h2>Brand</h2>
+    <div class="brand-grid">
+      <% indexs.forEach(index => { %>
+      <div class="brand-card">
+        <img src="<%= index.image %>" alt="<%= index.name %>">
+        <h3><%= index.name %></h3>
+      </div>
+      <% }) %>
+    </div>
+  </section>
+  <section class="scent-matcher">
+    <div class="scent-matcher-image">
+      <img src="img/index/lengalombok-87454.png" alt="Perfume ingredients and mixing tools">
+    </div>
+    <div class="scent-matcher-content">
+      <h2>Scent Matcher</h2>
+      <p>Tell Us About You, We'll Find Your Perfect Scent!</p>
+      <a href="/scent-matcher" class="btn">Try It</a>
+    </div>
+  </section>
+
+
+  <%- include('partials/footer.ejs') %>
+
+</body>
+
+</html>

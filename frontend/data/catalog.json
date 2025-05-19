@@ -1,0 +1,127 @@
+[
+  {
+    "image": "/img/catalog-image/image1.png",
+    "name": "Asmoro Bangun",
+    "category": "Semerbak"
+  },
+
+  {
+    "image": "/img/catalog-image/image2.png",
+    "name": "Almonde Eclat",
+    "category": "Tomolab"
+  },
+
+  {
+    "image": "/img/catalog-image/image3.png",
+    "name": "Es Teh Manis",
+    "category": "Crusita"
+  },
+
+  {
+    "image": "/img/catalog-image/image4.png",
+    "name": "Es Teh Pandan",
+    "category": "Semerbak"
+  },
+
+  {
+    "image": "/img/catalog-image/image5.png",
+    "name": "Diana",
+    "category": "The Body Tale"
+  },
+
+  {
+    "image": "/img/catalog-image/image6.png",
+    "name": "Delicate Dream",
+    "category": "Avicenna"
+  },
+
+  {
+    "image": "/img/catalog-image/image7.png",
+    "name": "Fields Of Ubud",
+    "category": "Project 1945"
+  },
+
+  {
+    "image": "/img/catalog-image/image8.png",
+    "name": "Jamaika",
+    "category": "Aamodini"
+  },
+
+  {
+    "image": "/img/catalog-image/image9.png",
+    "name": "Red Rahpsody",
+    "category": "Loco Scent"
+  },
+
+  {
+    "image": "/img/catalog-image/image10.png",
+    "name": "S.O.T.B",
+    "category": "Saff & Co"
+  },
+
+  {
+    "image": "/img/catalog-image/image11.png",
+    "name": "Princess of Java",
+    "category": "Project 1945"
+  },
+
+  {
+    "image": "/img/catalog-image/image12.png",
+    "name": "Rainshower Sacra",
+    "category": "Studio Sable"
+  },
+
+  {
+    "image": "/img/catalog-image/image13.png",
+    "name": "Memoir of gaia",
+    "category": "Tomolab"
+  },
+
+  {
+    "image": "/img/catalog-image/image14.png",
+    "name": "Cahntilly Lace",
+    "category": "Avicenna"
+  },
+
+  {
+    "image": "/img/catalog-image/image15.png",
+    "name": "Spice Nomad",
+    "category": "The Body Tale"
+  },
+
+  {
+    "image": "/img/catalog-image/image16.png",
+    "name": "Busy Day",
+    "category": "Crusita"
+  },
+
+  {
+    "image": "/img/catalog-image/image17.png",
+    "name": "Abandoned Land",
+    "category": "Loco Scent"
+  },
+
+  {
+    "image": "/img/catalog-image/image18.png",
+    "name": "Sunset in Sumba",
+    "category": "Project 1945"
+  },
+
+  {
+    "image": "/img/catalog-image/image19.png",
+    "name": "Chandra Kirana",
+    "category": "Semerbak"
+  },
+
+  {
+    "image": "/img/catalog-image/image20.png",
+    "name": "Teh Tjab Tomo",
+    "category": "Tomolab"
+  },
+
+  {
+    "image": "/img/catalog-image/image21.png",
+    "name": "Dirgantara",
+    "category": "Aamodini"
+  }
+]

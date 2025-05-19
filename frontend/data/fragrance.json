@@ -1,0 +1,80 @@
+[
+    {
+        "image": "img/fragrance/floral-image.png",
+        "name": "Floral",
+        "alt" :"Floral fragrance category showing pink roses",
+        "desc" : "Notes floral adalah yang paling umum dalam parfum, menggambarkan aroma bunga seperti mawar, melati, dan lavender. Memberikan kesan feminin, romantis, dan elegan."
+    },
+
+    {
+        "image": "img/fragrance/green-image.png",
+        "name": "Green",
+        "alt" :"Green fragrance category showing fresh grass",
+        "desc" : "Notes hijau mengingatkan pada aroma dedaunan, rumput, dan tanaman segar. Memberikan kesan alami, segar, dan bersih."
+    },
+
+     {
+        "image": "img/fragrance/muskskinanimatic-image.png",
+        "name": "Musk | Skin | Animalic",
+        "alt" :"Musk fragrance category showing fur texture",
+        "desc" : "Notes ini menghadirkan aroma yang dalam dan sensual dari bahan seperti musk dan civet. Memberikan kesan sensual dan memikat."
+    },
+
+    {
+        "image": "img/fragrance/fruity-image.png",
+        "name": "Fruity",
+        "alt" :"Fruity fragrance category showing colorful fruits",
+        "desc" : "Notes buah-buahan memberikan sentuhan manis dan segar dari buah seperti apel, peach, dan berry. Sering kali memberikan kesan ceria dan playful."
+    },
+
+
+    {
+        "image": "img/fragrance/gourmand-image.png",
+        "name": "Gourmand",
+        "alt" :"Gourmand fragrance category showing chocolate and sweets",
+        "desc" : "Notes ini menghadirkan aroma makanan manis seperti vanilla, cokelat, dan karamel. Sangat menggoda dan memberikan kesan hangat serta nyaman. Fun fact: Gourmand notes baru popular di dunia parfum pada akhir abad ke-20 dan telah menjadi kategori favorit banyak orang."
+    },
+
+    {
+        "image": "img/fragrance/aromatic-image.png",
+        "name": "Aromatics",
+        "alt" :"Aromatics fragrance category showing herbs",
+        "desc" : "Notes aromatic biasanya berasal dari tanaman herbal seperti rosemary, thyme, dan lavender. Memberikan aroma yang tajam dan menyegarkan."
+    },
+
+    {
+        "image": "img/fragrance/watery-image.png",
+        "name": "Watery",
+        "alt" :"Watery fragrance category showing ocean waves",
+        "desc" : "Notes ini menghadirkan aroma segar seperti air laut, sering kali dikaitkan dengan kesan laut atau hujan. Memberikan kesan bersih, tenang, dan menyegarkan."
+    },
+
+    {
+        "image": "img/fragrance/woodymoss-image.png",
+        "name": "Woody | Moss",
+        "alt" :"Woody fragrance category showing wooden texture",
+        "desc" : "Notes kayu dan lumut memberikan aroma yang dalam dan hangat dari bahan seperti cedarwood, sandalwood dan oakmoss. Cocok untuk kesan elegan dan maskulin. Oakmoss adalah bahan alami yang telah digunakan dalam pembuatan parfum selama ratusan tahun, terutama dalam parfum chypre. Sandalwood."
+    },
+
+    {
+        "image": "img/fragrance/amberbalsamic-image.png",
+        "name": "Amber | Balsamic",
+        "alt" :"Amber fragrance category showing warm amber resin",
+        "desc" : "Notes amber dan balsamic membawa aroma manis dan hangat dari bahan seperti amber dan benzoin. Memberikan kesan hangat dan mewah."
+
+    },
+
+    {
+        "image": "img/fragrance/spices-image.png",
+        "name": "Spices",
+        "alt" :"Spices fragrance category showing various spices",
+        "desc" : "Notes rempah-rempah membawa aroma yang hangat dan eksotis dari bahan seperti kayu manis, cengkeh, dan lada. Memberikan kesan hangat dan intens. Spices seperti cengkeh dan kayu manis dulu lebih berharga daripada emas di Eropa pada Abad Pertengahan."
+        
+    }
+
+
+   
+
+
+
+]

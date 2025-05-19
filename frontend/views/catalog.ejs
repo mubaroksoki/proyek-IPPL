@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/catalog.css">
+    <title><%- title %></title>
+</head>
+<body>
+        <!-- Header -->
+         <%- include('partials/header.ejs') %>
+    
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <button class="filter-btn">Filter</button>
+            <button class="order-btn">Order By</button>
+        </div>
+    
+        <!-- Product Grid -->
+        <div class="product-container">
+            <% products.forEach(product => { %>
+                <div class="product-card">
+                <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image">
+                <div class="product-info">
+                    <p class="product-category"><%= product.category %></p>
+                    <h3 class="product-name"><%= product.name %></h3>
+                </div>
+                </div>
+            <% }) %>
+        </div>
+    
+        <!-- Footer -->
+        <footer>
+            <div class="footer-left">
+                <p>Copyright by - Kelompok 2</p>
+                <ul>
+                    <li>Alfansh Mubarak</li>
+                    <li>Syauqi Mubarak</li>
+                    <li>Winoby Zenlitha</li>
+                    <li>Fadli Muzaki</li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h3>Contact us</h3>
+                <input type="email" placeholder="Enter your email">
+            </div>
+        </footer>
+</body>
+</html>
+

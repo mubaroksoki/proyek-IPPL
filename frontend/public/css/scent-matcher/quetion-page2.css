@@ -1,0 +1,80 @@
+    h2 {
+      margin-bottom: 30px;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 600px;
+      margin: auto;
+      gap: 10px 30px;
+    }
+
+    .note {
+      flex: 1 1 40%;
+      padding: 15px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .note:nth-child(1) {
+      background-color: #a1565b;
+      color: white;
+    }
+    .note:nth-child(2) {
+      background-color: #c8e0a2;
+    }
+    .note:nth-child(3) {
+      background-color: #f9ad4c;
+    }
+    .note:nth-child(4) {
+      background-color: #ffe6c4;
+    }
+    .note:nth-child(5) {
+      background-color: #b48c60;
+    }
+    .note:nth-child(6) {
+      background-color: #a8e8fa;
+    }
+    .note:nth-child(7) {
+      background-color: #d2bba5;
+    }
+    .note:nth-child(8) {
+      background-color: #807b58;
+      color: white;
+    }
+    .note:nth-child(9) {
+      background-color: #f3f5a0;
+    }
+    .note:nth-child(10) {
+      background-color: #f1cc94;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+
+    .buttons button {
+      padding: 10px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #9a4c55;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .buttons button:hover {
+      background-color: #7c383f;
+    }
