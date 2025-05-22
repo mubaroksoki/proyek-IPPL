@@ -34,6 +34,15 @@ app.get("/catalog", (req, res) => {
   });
 });
 
+app.get("/register-success", (req, res) => {
+  const message = req.query.message || "User registered successfully";
+  res.render("register-success", {
+    title: "Register Success",
+    logo: "Scentara",
+    message,
+  });
+});
+
 app.get("/fragrance", (req, res) => {
   res.render("fragrance", {
     fragrances,
@@ -64,65 +73,6 @@ app.get("/scent-matcher", (req, res) => {
     showPage3,
     showPage4,
   });
-});
-
-//Knuth-Morris-Pratt algorithm
-
-function kmp(text, pattern) {
-  const build = (p) => {
-    let table = Array(p.length).fill(0),
-      j = 0;
-    for (let i = 1; i < p.length; ) {
-      if (p[i] === p[j]) table[i++] = ++j;
-      else if (j > 0) j = table[j - 1];
-      else i++;
-    }
-    return table;
-  };
-
-  text = text.toLowerCase();
-  pattern = pattern.toLowerCase();
-  const t = build(pattern);
-  let i = 0,
-    j = 0;
-
-  while (i < text.length) {
-    if (text[i] === pattern[j]) {
-      i++;
-      j++;
-      if (j === pattern.length) return true;
-    } else if (j > 0) {
-      j = t[j - 1];
-    } else {
-      i++;
-    }
-  }
-  return false;
-}
-
-app.get("/search", (req, res) => {
-  const { type, query } = req.query;
-  if (!type || !query) return res.redirect("/");
-
-  let results = [];
-  if (type === "name") {
-    results = products.filter((item) => kmp(item.name, query));
-    res.render("catalog", { title: "Search Result - Name", products: results });
-  } else if (type === "category") {
-    results = products.filter((item) => kmp(item.category, query));
-    res.render("catalog", {
-      title: "Search Result - Category",
-      products: results,
-    });
-  } else if (type === "notes") {
-    results = fragrances.filter((item) => kmp(item.name, query));
-    res.render("fragrance", {
-      title: "Search Result - Notes",
-      fragrances: results,
-    });
-  } else {
-    res.redirect("/");
-  }
 });
 
 app.listen(PORT, () => {

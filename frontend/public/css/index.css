@@ -36,74 +36,9 @@ header {
   font-weight: bold;
 }
 
-/* Navigation Styles */
-nav #mainNav ul {
+nav{
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav #mainNav ul li {
-  margin-left: 30px;
-}
-
-nav #mainNav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  padding: 7px;
-}
-
-nav #mainNav ul li a:hover {
-  opacity: 0.8;
-  text-decoration: none;
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
-  display: none;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 1001;
-}
-
-.hamburger-menu .bar {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 5px 0;
-  transition: all 0.3s ease;
-}
-
-/* Nav Styles */
-nav {
-  transition: all 0.3s ease;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin-left: 30px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  padding: 7px;
-}
-
-nav ul li a:hover {
-  opacity: 0.8;
-  text-decoration: none;
+  gap: 40px;
 }
 
 .hero {
@@ -134,11 +69,17 @@ nav ul li a:hover {
   font-family: 'Playfair Display', serif;
   color: white;
   text-align: left;
+  text-align: center;
 }
 
 .hero-content h1 em {
   font-family: 'Ancizar Serif', serif;
   font-style: italic;
+}
+
+.hero-content .btn{
+  position: relative;
+  align-self: center;
 }
 
 .hero-image {
@@ -154,12 +95,9 @@ nav ul li a:hover {
   height: auto;
   max-width: 100%;
   max-height: min(80vh, 600px);
-  object-fit: contain;
 }
 
-.hero-image img:hover {
-  transform: scale(1.03);
-}
+
 
 .btn {
   display: inline-block;

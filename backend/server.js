@@ -16,8 +16,8 @@ const wishlistRoutes = require("./routes/wishlist");
 
 const init = async () => {
   const server = Hapi.server({
-    port: process.env.PORT || 8080,
-    host: "0.0.0.0",
+    port: process.env.PORT || 3000,
+    host: "localhost",
     routes: {
       cors: {
         origin: ["*"],

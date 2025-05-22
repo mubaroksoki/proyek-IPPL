@@ -20,10 +20,37 @@
                 <div class="profile-img"><img src="profile-img2.jpg" alt="Profile Image"></div>
             </div>
             <div class="welcome-text">
-                <h2>Hello, Zenitha</h2>
+                <h2>Hello, <span id="username-placeholder">Guest</span></h2>
                 <p>We know that there are many variants of perfume as a preference for the fragrance choice, it maybe your choice in this wishlist.</p>
             </div>
+
         </div>
+
+        <div class="logout-container" style="text-align: right; margin: 20px;">
+        <button id="logoutBtn" style="padding: 10px 20px; cursor: pointer;">Logout</button>
+        </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const user = JSON.parse(localStorage.getItem("user"));
+                    const nameElement = document.getElementById("username-placeholder");
+
+                    if (user && user.name) {
+                        nameElement.textContent = user.name;
+                    } else {
+                        nameElement.textContent = "Guest";
+                    }
+
+                    // Tambahkan event listener tombol logout di sini
+                    const logoutBtn = document.getElementById("logoutBtn");
+                    logoutBtn.addEventListener("click", () => {
+                        localStorage.removeItem("token");
+                        localStorage.removeItem("user");
+                        // Arahkan ke index.ejs (biasanya ada di route "/")
+                        window.location.href = "/";
+                    });
+                });
+            </script>
+
     </section>
 
     <!-- Gallery Section -->

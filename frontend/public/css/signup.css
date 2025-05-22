@@ -104,21 +104,6 @@ input[type="password"]:focus {
     cursor: pointer;
 }
 
-.checkbox-checked {
-    color: #da7680;
-    font-size: 14px;
-}
-
-.checkbox-label {
-    font-size: 14px;
-    color: #555;
-}
-
-.checkbox-label a {
-    color: #da7680;
-    text-decoration: none;
-}
-
 .btn {
     width: 100%;
     padding: 15px;
@@ -131,6 +116,9 @@ input[type="password"]:focus {
     cursor: pointer;
     transition: background-color 0.3s;
     margin-bottom: 20px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn:hover {
