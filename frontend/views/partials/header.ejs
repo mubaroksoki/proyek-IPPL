@@ -13,40 +13,86 @@
       <li><a href="/fragrance">Fragrance</a></li>
     </ul>
   </nav>
+</header>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const hamburgerMenu = document.querySelector(".hamburger-menu");
-      const nav = document.querySelector("nav");
-      const body = document.querySelector("body");
+<script>
+  // Mobile Navigation Toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerMenu = document.getElementById("hamburgerMenu");
+  const mainNav = document.getElementById("mainNav");
+  const navBackdrop = document.getElementById("navBackdrop");
+  const body = document.body;
 
-      if (hamburgerMenu && nav) {
-        hamburgerMenu.addEventListener("click", function (e) {
-          e.stopPropagation();
-          this.classList.toggle("active");
-          nav.classList.toggle("active");
-          body.classList.toggle("nav-active");
-        });
+  function toggleMenu() {
+    hamburgerMenu.classList.toggle("active");
+    mainNav.classList.toggle("active");
+    navBackdrop.classList.toggle("active");
 
-        // Close menu when clicking on a nav link
-        const navLinks = document.querySelectorAll("nav ul li a");
-        navLinks.forEach((link) => {
-          link.addEventListener("click", function () {
-            hamburgerMenu.classList.remove("active");
-            nav.classList.remove("active");
-            body.classList.remove("nav-active");
-          });
-        });
+    // Prevent body scroll when menu is open
+    if (mainNav.classList.contains("active")) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "";
+    }
+  }
 
-        // Close menu when clicking outside
-        document.addEventListener("click", function (event) {
-          if (!nav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-            hamburgerMenu.classList.remove("active");
-            nav.classList.remove("active");
-            body.classList.remove("nav-active");
-          }
-        });
+  function closeMenu() {
+    hamburgerMenu.classList.remove("active");
+    mainNav.classList.remove("active");
+    navBackdrop.classList.remove("active");
+    body.style.overflow = "";
+  }
+
+  // Toggle menu on hamburger click
+  hamburgerMenu.addEventListener("click", toggleMenu);
+
+  // Close menu when clicking backdrop
+  navBackdrop.addEventListener("click", closeMenu);
+
+  // Close menu when clicking nav links (for mobile)
+  const navLinks = mainNav.querySelectorAll("a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        closeMenu();
       }
     });
-  </script>
-</header>
+  });
+
+  // Close menu on window resize if screen becomes larger
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      closeMenu();
+    }
+  });
+
+  // Close menu on escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mainNav.classList.contains("active")) {
+      closeMenu();
+    }
+  });
+
+  // Smooth header transition on scroll
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      // Scrolling down - hide header partially on mobile, fully on desktop
+      if (window.innerWidth <= 768) {
+        header.style.transform = "translateY(-50%)"; // Only hide 50% on mobile
+      } else {
+        header.style.transform = "translateY(-100%)"; // Full hide on desktop
+      }
+    } else {
+      // Scrolling up - show header
+      header.style.transform = "translateY(0)";
+    }
+
+    lastScrollTop = scrollTop;
+  });
+});
+</script>

@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
           data.message
         )}`;
       } else {
-        responseMessage.innerHTML = `<p>${data.message}</p>`;
+        alert("Undefined email or password or name");
       }
     } catch (error) {
       console.error("Error:", error);
