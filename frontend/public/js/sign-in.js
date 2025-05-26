@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const response = await fetch(
-        "http://backend-env.eba-y88id5fn.us-east-1.elasticbeanstalk.com/auth/login",
+        "link-backend-aws",
         {
           method: "POST",
           headers: {
