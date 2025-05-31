@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector(".product-container");
 
   fetch(
-    "http://backend-env.eba-y88id5fn.us-east-1.elasticbeanstalk.com/catalog/parfums"
+    "link backend aws"
   )
     .then((response) => response.json())
     .then((result) => {
