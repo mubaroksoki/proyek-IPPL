@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (!fragrances) {
     try {
       const response = await fetch(
-        "http://backend-env.eba-y88id5fn.us-east-1.elasticbeanstalk.com/fragrance"
+        "link backend aws"
       );
       const result = await response.json();
 
