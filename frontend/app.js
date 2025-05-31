@@ -34,6 +34,14 @@ app.get("/catalog", (req, res) => {
   });
 });
 
+app.get("/catalog-login", (req, res) => {
+  res.render("catalog-login", {
+    title: "Catalog Scentara",
+    logo: "Scentara",
+    request: req,
+  });
+});
+
 app.get("/register-success", (req, res) => {
   const message = req.query.message || "User registered successfully";
   res.render("register-success", {
@@ -51,10 +59,19 @@ app.get("/fragrance", (req, res) => {
   });
 });
 
+app.get("/fragrance-login", (req, res) => {
+  res.render("fragrance-login", {
+    title: "Fragrance Scentara",
+    logo: "Scentara",
+    request: req,
+  });
+});
+
 app.get("/home", (req, res) => {
   res.render("home", {
     title: "Home Scentara",
     logo: "Scentara",
+    request: req,
   });
 });
 
@@ -72,6 +89,24 @@ app.get("/scent-matcher", (req, res) => {
     showPage2,
     showPage3,
     showPage4,
+  });
+});
+
+app.get("/scent-matcher-login", (req, res) => {
+  const page = req.query.page;
+  const showPage5 = page === "5";
+  const showPage6 = page === "6";
+  const showPage7 = page === "7";
+  const showPage8 = page === "8";
+
+  res.render("scent-matcher-login", {
+    title: "Scent Matcher",
+    logo: "Scentara",
+    request: req,
+    showPage5,
+    showPage6,
+    showPage7,
+    showPage8,
   });
 });
 

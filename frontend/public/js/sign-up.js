@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const res = await fetch(
-        "link-backend-aws",
+        "http://backend-env.eba-y88id5fn.us-east-1.elasticbeanstalk.com/auth/register",
         {
           method: "POST",
           headers: {
@@ -67,8 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (error) {
       console.error("Error:", error);
-      responseMessage.innerHTML =
-        "<p>Something went wrong. Please try again later.</p>";
+      responseMessage.innerHTML = alert("Something wewnt wrong");
     }
   });
 });

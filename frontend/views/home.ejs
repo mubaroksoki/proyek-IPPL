@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%- title %></title>
     <link rel="stylesheet" href="css/home.css">
-     <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet" />
 </head>
 <body>
     <!-- Header Section -->
@@ -26,32 +25,17 @@
             </div>
 
         </div>
+        <script>
+            const user = JSON.parse(localStorage.getItem("user"));
+            const nameElement = document.getElementById("username-placeholder");
 
-        <div class="logout-container" style="text-align: right; margin: 20px;">
-        <button id="logoutBtn" style="padding: 10px 20px; cursor: pointer;">Logout</button>
-        </div>
-            <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                    const user = JSON.parse(localStorage.getItem("user"));
-                    const nameElement = document.getElementById("username-placeholder");
+            if (user && user.name) {
+                nameElement.textContent = user.name;
+            } else {
+                nameElement.textContent = "Guest";
+            }
 
-                    if (user && user.name) {
-                        nameElement.textContent = user.name;
-                    } else {
-                        nameElement.textContent = "Guest";
-                    }
-
-                    // Tambahkan event listener tombol logout di sini
-                    const logoutBtn = document.getElementById("logoutBtn");
-                    logoutBtn.addEventListener("click", () => {
-                        localStorage.removeItem("token");
-                        localStorage.removeItem("user");
-                        // Arahkan ke index.ejs (biasanya ada di route "/")
-                        window.location.href = "/";
-                    });
-                });
-            </script>
-
+        </script>
     </section>
 
     <!-- Gallery Section -->
@@ -157,24 +141,6 @@
     </section>
 
     <!-- Footer Section -->
-    <footer>
-        <div class="footer-container">
-            <div class="copyright">
-                <p>Copyright by - Kelompok 2</p>
-                <ul>
-                    <li>Alfanah Muhson</li>
-                    <li>Syauqi Mubarok</li>
-                    <li>Winadya Zenitha</li>
-                    <li>Fadli Muzaki</li>
-                </ul>
-            </div>
-            <div class="contact">
-                <p>Contact us</p>
-                <div class="email-input">
-                    <input type="email" placeholder="Input your email">
-                </div>
-            </div>
-        </div>
-    </footer>
+     <%- include('partials/footer.ejs') %>
 </body>
 </html>

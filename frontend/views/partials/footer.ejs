@@ -10,6 +10,54 @@
     </div>
     <div class="footer-right">
         <h3>Contact us</h3>
-        <input type="email" placeholder="Enter your email">
+        <input type="email" id="emailInput" placeholder="Enter your email">
+        <button onclick="handleEmailSubmit()" style="background-color: #ff8800; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1rem; transition: background 0.2s;">
+            Submit
+        </button>
+        <style>
+            .footer-right {
+            padding: 0;
+            background: none;
+            border-radius: 0;
+            box-shadow: none;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            }
+            .footer-right h3 {
+            color: #ff8800;
+            margin-bottom: 10px;
+            font-weight: 600;
+            }
+            #emailInput {
+            padding: 10px;
+            border: 1px solid #ff8800;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.2s;
+            }
+            #emailInput:focus {
+            border-color: #ff6600;
+            }
+            .footer-right button:hover {
+            background: #ff6600;
+            }
+        </style>
     </div>
+
+    <script>
+        function handleEmailSubmit() {
+            var email = document.getElementById('emailInput').value;
+
+            if (email.includes('@gmail.com')) {
+                window.location.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=2211102021@ittelkom-pwt.ac.id';
+            } else if (email.includes('@outlook.com') || email.includes('@hotmail.com')) {
+                window.location.href = 'https://outlook.live.com/owa/0/owaframeset.aspx?viewtype=newMessage&to=syauqimubarokk@student.telkomuniversity.ac.id';
+            } else {
+                alert('Please use a Gmail or Outlook email address.');
+            }
+        }
+    </script>
 </footer>
